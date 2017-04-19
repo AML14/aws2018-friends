@@ -1,0 +1,26 @@
+{
+  "name": "aws-2017-friends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resinas/aws2017-friends.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/resinas/aws2017-friends/issues"
+  },
+  "homepage": "https://github.com/resinas/aws2017-friends#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "url-join": "^2.0.1"
+  }
+}
