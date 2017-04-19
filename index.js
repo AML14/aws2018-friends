@@ -3,22 +3,25 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require('path');
-var request = require('request');
-var urljoin = require('url-join');
+var contactsResource = require('./contactsResource.js');
+var request = require('request').defaults({json: true});
 
 var port = (process.env.PORT || 16778);
 var baseAPI = "/api/v1";
+
+
+
+
 
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
-app.get(baseAPI + "/contacts", (request, response) => {
+app.get(baseAPI + "/contacts", (req, response) => {
     console.log("GET /contacts"); 
 
-    var url = urljoin('https://aws2017-staging.herokuapp.com', baseAPI, '/contacts', '?apikey=1234abcd');
-    request.get('http://www.google.com', (error, resp, body) => {
+    request.get(contactsResource("/contacts"), (error, resp, body) => {
         if (error) {
             console.log('error:'+error);
             response.sendStatus(500);
