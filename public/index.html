@@ -11,7 +11,7 @@
     <body>
         
         
-        <h1>Contacts with MongoDB</h1>
+        <h1>Contacts with Frontend Integration</h1>
         <div ng-controller="ListCtrl">
         <form name="newContactForm">
             <table class="table">
@@ -19,7 +19,6 @@
                     <tr>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -27,13 +26,11 @@
                     <tr>
                         <td><input class="form-control" type="text" ng-model="newContact.name"/></td>
                         <td><input class="form-control" type="text" name="phone" ng-model="newContact.phone"/></td>
-                        <td ng-class="{'has-error': !newContactForm.email.$valid}"><input class="form-control" type="text" name="email" required ng-pattern="/[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+/" ng-model="newContact.email"/></td>
                         <td></td>
                     </tr>
                     <tr ng-repeat="contact in contacts">
                         <td>{{contact.name}}</td>
                         <td>{{contact.phone}}</td>
-                        <td>{{contact.email}}</td>
                     </tr>
                 </tbody>
             </table>
